@@ -1,0 +1,11 @@
+.MuiFormControl-root {
+  width: 100%;
+  margin-top: 10px !important;
+}
+
+#submitBtn {
+  width: 50%;
+  color: white;
+  background-color: #05AC72;
+  margin-top: 15px;
+}

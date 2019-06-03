@@ -1,0 +1,66 @@
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+
+.backing {
+  background-image: url('../assets/solar.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (max-width: 1245px) {
+  .half {
+    width: 100% !important;
+  }
+
+  .arrow {
+    display: block !important;
+  }
+ }
+
+.half {
+  position: relative;
+  float: left;
+  border: 1px #000;
+  height: 100%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+}
+
+.formContainer {
+  background-color: #fff;
+  padding: 15px 30px 15px 30px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
+}
+
+.formContainer p {
+  font-size: 10px;
+  color: grey;
+}
+
+.arrow {
+  box-sizing: border-box;
+  height: 7vw;
+  cursor: pointer;
+  width: 7vw;
+  bottom: 50px;
+  position: absolute;
+  border-style: solid;
+  border-color: white;
+  display: none;
+  border-width: 0px 1px 1px 0px;
+  transform: rotate(45deg);
+  transition: border-width 150ms ease-in-out;
+}
+
+.arrow:hover {
+  border-bottom-width: 4px;
+  border-right-width: 4px;
+}
