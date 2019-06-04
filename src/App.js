@@ -17,7 +17,7 @@ class App extends Component {
       currentInstallation: 0,
       metrics: [
         {title: 'METRIC TONNES OF CARBON DIOXIDE, ENTERING OUR ATMOSPHERE', logo: 'carbon', multiplier: 0.001},
-        {title: 'SQUARE METERS OF LAND USEAGE', logo: 'earth', multiplier: 0.048},
+        {title: 'KILOGRAMS OF COAL BEING USED', logo: 'earth', multiplier: 0.4},
         {title: 'LITRES OF WATER BEING WASTED AWAY', logo: 'water', multiplier: 1.1},
       ]
     }
