@@ -39,7 +39,6 @@ class App extends Component {
     statPanel.scrollIntoView();
   }
 
-
   render() {
     let sidePanel;
 

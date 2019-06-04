@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
-import MomentUtils from '@date-io/moment';
-import { TextField, Button } from '@material-ui/core';
-import './SolarForm.css';
-import Moment from 'moment';
 import PropTypes from 'prop-types';
+import Moment from 'moment';
+import MomentUtils from '@date-io/moment';
+import { Button } from '@material-ui/core';
 import { ValidatorForm, TextValidator } from 'react-material-ui-form-validator';
+import { DatePicker, MuiPickersUtilsProvider } from "@material-ui/pickers";
+import './SolarForm.css';
  
 /**
  * Componet of a form for a user to input their solor specifications
@@ -80,6 +80,10 @@ class SolarForm extends Component {
       </React.Fragment>
     )
   }
+}
+
+SolarForm.propTypes = {
+  setSolarInstallationSpecs: PropTypes.func.isRequired
 }
 
 export default SolarForm;

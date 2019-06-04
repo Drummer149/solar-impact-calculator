@@ -30,17 +30,26 @@ class StatCard extends Component {
     return hours * 310 * numPanels / 2 / 1000;
   }
 
+  // Given a kilowatthour and a multiplier return the statistic that will be displayed
+  getStat(kph, multiplier){
+    return parseInt(kph * multiplier, 10);
+  }
+
   // Take in new props to set the statistic of the displaying card
   componentWillReceiveProps(props){
     let hours = this.findHours(Moment(), props.startDate);
     let kph = this.convertHoursAndPanelsToKiloWattHours(hours, props.currentInstallation);
-    let newStat = parseInt(kph * props.metric.multiplier);
-    this.setState({stat : newStat});
+    this.setState({stat : this.getStat(kph, props.metric.multiplier)});
+  }
+
+  // Should return css rule to reverse row if odd index
+  getFlowDirection(index){
+    return index % 2 === 1 ? 'row-reverse' : 'row';
   }
   
   render() {
     // Every second panel is reversed within flexbox
-    let flowDirection = this.props.index % 2 === 1 ? 'row-reverse' : 'row';
+    let flowDirection = this.getFlowDirection(this.props.index);
 
     return (
       <div className="statCard" style={{ flexDirection : flowDirection }}>
@@ -55,6 +64,13 @@ class StatCard extends Component {
       </div>
      )
    }
+ }
+
+ StatCard.propTypes = {
+    index: PropTypes.number.isRequired,
+    metric: PropTypes.object.isRequired,
+    startDate: PropTypes.number.isRequired,
+    currentInstallation: PropTypes.number.isRequired
  }
 
  export default StatCard;
